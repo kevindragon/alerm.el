@@ -10,6 +10,7 @@
 
 ;;; Commentary:
 
+;; require alarm in you init.el: `(require 'alarm)'
 ;; Set an alarm with `alarm-clock', and enter the time;
 ;; cancel the alarm with `alarm-clock-cancel'
 
@@ -23,11 +24,13 @@
   (dotimes (n 3)
     (play-sound-file "alarm.wav")))
 
+;;;###autoload
 (defun alarm-clock-cancel ()
   "Cancel the alarm clock."
   (interactive)
   (cancel-timer alarm-clock-timer))
 
+;;;###autoload
 (defun alarm-clock ()
   "Set an alarm.
 The time format is the same accepted by `run-at-time'.
